@@ -1,4 +1,4 @@
-function paymentPage() {
+function PaymentPage() {
   return <>this is add paymentPage page</>;
 }
-export default paymentPage;
+export default PaymentPage;
