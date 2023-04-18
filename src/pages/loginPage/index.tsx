@@ -1,4 +1,4 @@
-function loginPage() {
+function LoginPage() {
   return <>this is add loginPage page</>;
 }
-export default loginPage;
+export default LoginPage;

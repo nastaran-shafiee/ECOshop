@@ -1,10 +1,18 @@
 import "./App.css";
-
+import {
+  createBrowserRouter,
+  RouterProvider,
+  RouteObject,
+  Route,
+  Router,
+} from "react-router-dom";
+import { routes } from "./Roots";
 function App() {
+  const Router = createBrowserRouter(routes);
   return (
-    <div className="App">
-      <p className="text-red-500"></p>
-    </div>
+    <RouterProvider router={Router}>
+      <div className="App"></div>
+    </RouterProvider>
   );
 }
 
