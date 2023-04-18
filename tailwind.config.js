@@ -10,6 +10,7 @@ export default {
         purpleC: "#6F11E1",
         grayC: "#B7B7B7",
         button: "#6F11E1",
+        table: "#E4E4E4",
       },
       backgroundImage: {
         "hero-lg": "url('../ECOshop/public/image/bg 2.png')",
