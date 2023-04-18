@@ -12,7 +12,7 @@ function PaymentPage() {
         <div className="bg-table h-[3.8rem] w-full flex  items-center pl-24">
           Payments
         </div>
-        <div className="bg-table2  w-full flex items-center pt-6 flex-col gap-8">
+        <div className="bg-table2  w-full flex items-center pt-16 flex-col gap-8">
           <Input
             text="Card Number"
             className="bg-table2"

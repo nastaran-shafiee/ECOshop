@@ -12,7 +12,7 @@ function AddProductsPage() {
         <div className="bg-table h-[3.8rem] w-full flex  items-center pl-24">
           Add products
         </div>
-        <div className="bg-table2  w-full flex items-center pt-6 flex-col gap-8">
+        <div className="bg-table2  w-full flex items-center pt-16 flex-col gap-8 ">
           <Input text="title" className=" bg-table2" classname2="bg-table2" />
           <Input
             text="Description"
