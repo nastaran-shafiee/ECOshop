@@ -6,3 +6,10 @@ export interface inputInterface {
   text?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
+export interface buttonInterface {
+  title?: string;
+  className?: string;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  type?: "submit" | "reset" | "button" | undefined;
+  disabled?: boolean;
+}
