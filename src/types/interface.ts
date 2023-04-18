@@ -4,6 +4,7 @@ export interface inputInterface {
   className?: string;
   classname2?: string;
   placeholder?: string;
+  clasname3?: string;
   text?: string;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }

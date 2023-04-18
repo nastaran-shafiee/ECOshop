@@ -4,12 +4,15 @@ function Input({
   type,
   className,
   classname2,
+  clasname3,
   placeholder,
   text,
   onChange,
 }: inputInterface) {
   return (
-    <div className="w-[22.4rem] heigt-[4rem] p-2 border relative rounded-[0.2rem]">
+    <div
+      className={`w-[22.4rem] heigt-[4rem] p-2 border relative rounded-[0.2rem] ${clasname3}`}
+    >
       <p
         className={`absolute top-[-0.9rem] z-50 bg-white w-[6.25rem] pl-2 ${classname2}`}
       >

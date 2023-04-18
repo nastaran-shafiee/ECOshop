@@ -28,7 +28,10 @@ function AddProductsPage() {
           <Input text="price" className="bg-table2" classname2="bg-table2" />
         </div>
         <div className=" w-full pt-8 flex gap-4 bg-table2 justify-center">
-          <ButtonComponent title="Cancel" className="w-[10.6rem]" />
+          <ButtonComponent
+            title="Cancel"
+            className="w-[10.6rem] border !border-orange-600 !text-orange-600 bg-white"
+          />
           <ButtonComponent
             title="Add Product"
             className="bg-orange-600 w-[10.6rem]"
