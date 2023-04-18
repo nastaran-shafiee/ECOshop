@@ -11,6 +11,7 @@ export default {
         grayC: "#B7B7B7",
         button: "#6F11E1",
         table: "#E4E4E4",
+        table2: "#F9F9F9",
       },
       backgroundImage: {
         "hero-lg": "url('../ECOshop/public/image/bg 2.png')",
