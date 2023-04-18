@@ -1,6 +1,7 @@
 import bg from "../../../public/image/bg 2.png";
 import vector from "../../../public/image/vector.png";
 import bag from "../../../public/image/bag.png";
+import Input from "../../component/input";
 function LoginPage() {
   return (
     <div className="w-full h-[926px] lg:w-[1366px] lg:h-screen bg-bgLogin relative">
@@ -15,10 +16,12 @@ function LoginPage() {
             <p className="text-orange-600 text-lg">ECOshop</p>
           </div>
           <p className="text-purpleC text-2xl font-bold">Welcome Back</p>
-          <p className="text-[12px] w-[360px] flex justify-center">
+          <p className="text-[12px] w-[360px] flex justify-center text-grayC">
             Lorem ipsum dolor sit amet consectetur adipisicing elit.
             Repellendus, nesciunt saepe assumenda officiis cum modi eum
           </p>
+          <Input text="Username" />
+          <Input text="Paasword" />
         </div>
       </div>
     </div>
