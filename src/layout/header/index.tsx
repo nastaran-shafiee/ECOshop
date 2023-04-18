@@ -3,7 +3,7 @@ import ButtonComponent from "../../component/button";
 import { Icon } from "@iconify/react";
 function HeaderPage() {
   return (
-    <header className="w-full justify-center gap-3 lg:w-[85.375rem] h-[6.375rem] flex lg:justify-around items-center lg:border">
+    <header className="w-full justify-center gap-3 lg:w-full h-[6.375rem] flex lg:justify-around items-center lg:border">
       <div className="flex gap-2 items-center">
         <img src={bag} alt="" />
         <p className="hidden lg:block text-orange-600 text-lg">ECOshop</p>
