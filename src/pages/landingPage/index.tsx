@@ -8,15 +8,15 @@ import { fetchData } from "../../redux/fetchMidlware";
 import { PRODUCT_URL } from "../../api/endPoints";
 import { ProductInterface } from "../../types/interface";
 import SinglePage from "../../layout/singlePage";
-import { changeModal } from "../../redux/fetchSlice";
+import { changeModal, isloding } from "../../redux/fetchSlice";
 function LandingPage() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.fetchSlice.data);
   const modalMode = useSelector((state) => state.fetchSlice.modalMode);
   const category1 = useSelector((state) => state.fetchSlice.category);
+  const loading = useSelector((state) => state.fetchSlice.loading);
 
   useEffect(() => {
-    // console.log(category);
     if (category1 !== undefined) {
       dispatch(
         fetchData({
@@ -24,6 +24,8 @@ function LandingPage() {
           category: category1,
         })
       );
+    } else if (category1 === "hi") {
+      dispatch(isloding("true"));
     } else {
       dispatch(
         fetchData({
@@ -31,7 +33,7 @@ function LandingPage() {
         })
       );
     }
-  }, [dispatch, data]);
+  }, [dispatch, category1]);
 
   function openModal(id: number) {
     dispatch(changeModal({ mode: true, productId: id }));
@@ -64,22 +66,26 @@ function LandingPage() {
                 <p>descending</p>
               </div>
             </div>
-            <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4  mt-8">
-              {data.map((item: ProductInterface) => (
-                <Cart
-                  key={item.id}
-                  price={item.price}
-                  title={item.title}
-                  image={item.image}
-                  description={item.description}
-                  id={item.id}
-                  category={item.category}
-                  onClick={() => {
-                    openModal(item.id);
-                  }}
-                />
-              ))}
-            </div>
+            {loading ? (
+              "Loading"
+            ) : (
+              <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4  mt-8">
+                {data.map((item: ProductInterface) => (
+                  <Cart
+                    key={item.id}
+                    price={item.price}
+                    title={item.title}
+                    image={item.image}
+                    description={item.description}
+                    id={item.id}
+                    category={item.category}
+                    onClick={() => {
+                      openModal(item.id);
+                    }}
+                  />
+                ))}
+              </div>
+            )}
           </div>
         </div>
       </div>

@@ -4,10 +4,12 @@ import { Icon } from "@iconify/react";
 import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { instance } from "../../api/contannt";
-import { addcategory } from "../../redux/fetchSlice";
+import { addcategory, isloding } from "../../redux/fetchSlice";
 function HeaderPage() {
   const [data, setData] = useState(null);
   const dispatch = useDispatch();
+  const loading = useSelector((state) => state.fetchSlice.loading);
+
   const [selectedCategory, setSelectedCategory] = useState(null);
   useEffect(() => {
     instance.get("/products/categories").then((response) => {
@@ -37,6 +39,7 @@ function HeaderPage() {
                   className="cursor-pointer"
                   onClick={() => {
                     setSelectedCategory(item);
+                    dispatch(isloding(true));
                     return dispatch(addcategory(item));
                   }}
                 >

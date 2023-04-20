@@ -12,6 +12,7 @@ const initialState = {
   productId: 0,
   singleProduct: {},
   category: undefined,
+  loading: true,
 };
 // redusers-------------------------------------------------
 const FetchSlice = createSlice({
@@ -33,7 +34,11 @@ const FetchSlice = createSlice({
       state.singleProduct = action.payload;
     },
     addcategory(state, action) {
+      state.loading = true;
       state.category = action.payload;
+    },
+    isloding(state, action) {
+      state.loading = action.payload;
     },
   },
 });
@@ -44,5 +49,6 @@ export const {
   changeModal,
   singleProductFunction,
   addcategory,
+  isloding,
 } = FetchSlice.actions;
 export default FetchSlice.reducer;

@@ -1,6 +1,6 @@
 import { instance } from "../../api/contannt";
 import { Dispatch } from "redux";
-import { addProducts, singleProductFunction } from "../fetchSlice";
+import { addProducts, isloding, singleProductFunction } from "../fetchSlice";
 import { fetchDataInterface, ProductInterface } from "../../types/interface";
 import { createDataSuccess } from "../fetchSlice";
 
@@ -10,7 +10,6 @@ export const fetchData =
   ({
     url,
     category,
-
     sort, // new parameter for sorting
   }: fetchDataInterface) =>
   async (dispatch: Dispatch) => {
@@ -25,8 +24,9 @@ export const fetchData =
         queryUrl += `&_sort=createdAt&_order=desc`;
       }
       const res = await instance.get(queryUrl);
-
+      dispatch(isloding(true));
       dispatch(addProducts(res.data));
+      dispatch(isloding(false));
     } catch (error) {
       console.log("error");
     }
