@@ -4,8 +4,6 @@ import {
   Slice,
   SliceCaseReducers,
 } from "@reduxjs/toolkit";
-import { Action } from "@remix-run/router";
-import axios from "axios";
 
 // inintial interface-----------------------------------------------
 const initialState = {
@@ -13,6 +11,7 @@ const initialState = {
   modalMode: false,
   productId: 0,
   singleProduct: {},
+  category: undefined,
 };
 // redusers-------------------------------------------------
 const FetchSlice = createSlice({
@@ -33,6 +32,9 @@ const FetchSlice = createSlice({
     singleProductFunction(state, action) {
       state.singleProduct = action.payload;
     },
+    addcategory(state, action) {
+      state.category = action.payload;
+    },
   },
 });
 
@@ -41,5 +43,6 @@ export const {
   createDataSuccess,
   changeModal,
   singleProductFunction,
+  addcategory,
 } = FetchSlice.actions;
 export default FetchSlice.reducer;
