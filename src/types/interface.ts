@@ -35,4 +35,5 @@ export interface ProductInterface {
   category?: string;
   image?: string;
   count?: number;
+  onClick?: (event: React.MouseEvent<HTMLElement>) => void;
 }

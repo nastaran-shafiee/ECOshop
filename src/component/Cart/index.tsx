@@ -9,9 +9,13 @@ function Cart({
   category,
   image,
   count,
+  onClick,
 }: ProductInterface) {
   return (
-    <div className="w-[15rem] h-[25rem] flex flex-col items-center border shadow rounded-[0.7rem] pt-2">
+    <div
+      className="w-[15rem] h-[25rem] flex flex-col items-center border shadow rounded-[0.7rem] pt-2"
+      onClick={onClick}
+    >
       <img
         src={image}
         alt=""
