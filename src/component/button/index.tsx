@@ -12,6 +12,7 @@ function ButtonComponent({
       className={`w-[11.6rem] h-[2.69rem] bg-button rounded-[0.4rem] ${className} text-white`}
       type={type}
       disabled={disabled}
+      onClick={onClick}
     >
       {title}
     </button>
