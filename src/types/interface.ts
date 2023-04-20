@@ -21,3 +21,9 @@ export interface authInterface {
   username: string;
   password: string;
 }
+export interface fetchDataInterface {
+  url?: string;
+  category?: string | undefined;
+
+  sort?: string | undefined;
+}
