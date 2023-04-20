@@ -6,8 +6,10 @@ import { useDispatch, useSelector } from "react-redux";
 import { instance } from "../../api/contannt";
 import { addcategory, isloding } from "../../redux/fetchSlice";
 import { RootState } from "../../redux/store";
+import { useNavigate } from "react-router-dom";
 // headerpage-------------------------------------------
 function HeaderPage() {
+  const navigate = useNavigate();
   const [data, setData] = useState<[] | null>(null);
   const dispatch = useDispatch();
   const loading = useSelector((state: RootState) => state.fetchSlice.loading);
@@ -18,6 +20,10 @@ function HeaderPage() {
       setData(response.data);
     });
   }, []);
+  // go to cart------------------------------------------------------
+  function gotoCart() {
+    navigate("/Cart");
+  }
   // return---------------------------------------------------------
   return (
     <header className="w-full justify-center md:justify-around gap-3 lg:w-full h-[6.375rem] flex lg:justify-around items-center lg:border">
@@ -63,6 +69,7 @@ function HeaderPage() {
             width="30"
             height="30"
             className="text-white"
+            onClick={gotoCart}
           />
         </div>
         <div className="w-[2.7rem] h-[2.7rem] bg-button flex justify-center items-center rounded-[0.4rem] lg:hidden">
