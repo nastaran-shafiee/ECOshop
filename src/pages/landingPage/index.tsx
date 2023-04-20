@@ -9,13 +9,19 @@ import { PRODUCT_URL } from "../../api/endPoints";
 import { ProductInterface } from "../../types/interface";
 import SinglePage from "../../layout/singlePage";
 import { changeModal, isloding } from "../../redux/fetchSlice";
+import { RootState } from "../../redux/store";
+// landing page-------------------------------------------------------
 function LandingPage() {
   const dispatch = useDispatch();
-  const data = useSelector((state) => state.fetchSlice.data);
-  const modalMode = useSelector((state) => state.fetchSlice.modalMode);
-  const category1 = useSelector((state) => state.fetchSlice.category);
-  const loading = useSelector((state) => state.fetchSlice.loading);
-
+  const data = useSelector((state: RootState) => state.fetchSlice.data);
+  const modalMode = useSelector(
+    (state: RootState) => state.fetchSlice.modalMode
+  );
+  const category1 = useSelector(
+    (state: RootState) => state.fetchSlice.category
+  );
+  const loading = useSelector((state: RootState) => state.fetchSlice.loading);
+  // useefect---------------------------------------------------------------------
   useEffect(() => {
     if (category1 !== undefined) {
       dispatch(
@@ -24,8 +30,6 @@ function LandingPage() {
           category: category1,
         })
       );
-    } else if (category1 === "hi") {
-      dispatch(isloding("true"));
     } else {
       dispatch(
         fetchData({
@@ -34,11 +38,12 @@ function LandingPage() {
       );
     }
   }, [dispatch, category1]);
+  // openModal function----------------------------------------------------
 
   function openModal(id: number) {
     dispatch(changeModal({ mode: true, productId: id }));
   }
-
+  // return function-----------------------------------------
   return (
     <div className="relative">
       <div className="mb-10 relative">

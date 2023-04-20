@@ -4,9 +4,16 @@ import {
   Slice,
   SliceCaseReducers,
 } from "@reduxjs/toolkit";
+import { InitialStateInterface } from "../../types/interface";
 
+interface FetchSliceInterface2
+  extends Slice<
+    InitialStateInterface,
+    SliceCaseReducers<InitialStateInterface>,
+    "fetchProducts"
+  > {}
 // inintial interface-----------------------------------------------
-const initialState = {
+const initialState: InitialStateInterface = {
   data: [],
   modalMode: false,
   productId: 0,
@@ -15,7 +22,7 @@ const initialState = {
   loading: true,
 };
 // redusers-------------------------------------------------
-const FetchSlice = createSlice({
+const FetchSlice: FetchSliceInterface2 = createSlice({
   name: "fetchProducts",
   initialState: initialState,
   reducers: {

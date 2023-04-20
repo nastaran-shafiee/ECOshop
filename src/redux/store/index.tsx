@@ -1,8 +1,11 @@
-import { configureStore } from "@reduxjs/toolkit";
+import { combineReducers } from "redux";
 import fetchProductsReducer from "../fetchSlice";
-const store = configureStore({
-  reducer: {
-    fetchSlice: fetchProductsReducer,
-  },
+
+const rootReducer = combineReducers({
+  fetchSlice: fetchProductsReducer,
+  // add more reducers here as needed
 });
-export default store;
+
+export type RootState = ReturnType<typeof rootReducer>;
+
+export default rootReducer;

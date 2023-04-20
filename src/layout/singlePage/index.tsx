@@ -6,19 +6,27 @@ import { changeModal } from "../../redux/fetchSlice";
 import { useEffect } from "react";
 import { fetchSingleProduct } from "../../redux/fetchMidlware";
 import { PRODUCT_URL } from "../../api/endPoints";
+import { RootState } from "../../redux/store";
+// singlepage-------------------------------------------------
 function SinglePage() {
-  const modalMode = useSelector((state) => state.fetchSlice.modalMode);
-  const product = useSelector((state) => state.fetchSlice.singleProduct);
-  const productId = useSelector((state) => state.fetchSlice.productId);
+  const modalMode = useSelector(
+    (state: RootState) => state.fetchSlice.modalMode
+  );
+  const product = useSelector(
+    (state: RootState) => state.fetchSlice.singleProduct
+  );
+  const productId = useSelector(
+    (state: RootState) => state.fetchSlice.productId
+  );
   const dispatch = useDispatch();
-
+  // closeModal-------------------------------------------------------------
   function closeNodal() {
     dispatch(changeModal({ mode: false }));
   }
   useEffect(() => {
     dispatch(fetchSingleProduct(productId, PRODUCT_URL));
   }, [dispatch, product]);
-
+  // return----------------------------------------------------------
   return (
     <div className="w-full h-full bg-whiteC absolute top-0 bottom-0">
       <div className=" w-[90%] top-20 left-[10%] lg:w-[70%] h-[29rem] bg-white sticky lg:left-[15%] lg:top-[5%] rounded-[10px]">

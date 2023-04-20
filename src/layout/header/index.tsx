@@ -5,17 +5,20 @@ import { useEffect, useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { instance } from "../../api/contannt";
 import { addcategory, isloding } from "../../redux/fetchSlice";
+import { RootState } from "../../redux/store";
+// headerpage-------------------------------------------
 function HeaderPage() {
-  const [data, setData] = useState(null);
+  const [data, setData] = useState<[] | null>(null);
   const dispatch = useDispatch();
-  const loading = useSelector((state) => state.fetchSlice.loading);
-
-  const [selectedCategory, setSelectedCategory] = useState(null);
+  const loading = useSelector((state: RootState) => state.fetchSlice.loading);
+  const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
+  // useefect------------------------------------------------------
   useEffect(() => {
     instance.get("/products/categories").then((response) => {
       setData(response.data);
     });
   }, []);
+  // return---------------------------------------------------------
   return (
     <header className="w-full justify-center md:justify-around gap-3 lg:w-full h-[6.375rem] flex lg:justify-around items-center lg:border">
       <div className="flex gap-2 items-center">

@@ -1,5 +1,5 @@
 import { instance } from "../../api/contannt";
-import { Dispatch } from "redux";
+import { AnyAction, Dispatch } from "redux";
 import { addProducts, isloding, singleProductFunction } from "../fetchSlice";
 import { fetchDataInterface, ProductInterface } from "../../types/interface";
 import { createDataSuccess } from "../fetchSlice";
@@ -12,7 +12,7 @@ export const fetchData =
     category,
     sort, // new parameter for sorting
   }: fetchDataInterface) =>
-  async (dispatch: Dispatch) => {
+  async (dispatch: Dispatch<AnyAction>) => {
     try {
       let queryUrl = `${url}`;
       if (category) {
@@ -34,7 +34,7 @@ export const fetchData =
 
 // create method-----------------------------------------------------------------------------
 export const createData =
-  (data: any, url: string) => async (dispatch: Dispatch) => {
+  (data: any, url: string) => async (dispatch: Dispatch<AnyAction>) => {
     try {
       const response = await instance.post(url, data);
 

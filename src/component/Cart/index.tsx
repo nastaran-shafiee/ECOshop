@@ -1,6 +1,7 @@
 import shoe from "../../../public/image/shoe.png";
 import { Icon } from "@iconify/react";
 import { ProductInterface } from "../../types/interface";
+// function cart--------------------------------------------------
 function Cart({
   id,
   title,
@@ -11,6 +12,7 @@ function Cart({
   count,
   onClick,
 }: ProductInterface) {
+  // return function------------------------------------------------------
   return (
     <div
       className="w-[15rem] h-[25rem] flex flex-col items-center border shadow rounded-[0.7rem] pt-2"

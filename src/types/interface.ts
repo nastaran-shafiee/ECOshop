@@ -1,4 +1,5 @@
 import { ChangeEvent } from "react";
+import { Slice, PayloadAction } from "@reduxjs/toolkit";
 export interface inputInterface {
   type?: string;
   className?: string;
@@ -22,18 +23,26 @@ export interface authInterface {
   password: string;
 }
 export interface fetchDataInterface {
-  url?: string;
+  url: string;
   category?: string | undefined;
-
   sort?: string | undefined;
 }
 export interface ProductInterface {
   id?: number;
-  title?: string;
+  title?: any;
   price?: number;
-  description?: string;
+  description?: any;
   category?: string;
   image?: string;
   count?: number;
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+}
+
+export interface InitialStateInterface {
+  data: ProductInterface[];
+  modalMode: boolean;
+  productId: number;
+  singleProduct: ProductInterface;
+  category: undefined | string;
+  loading: boolean;
 }

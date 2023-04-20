@@ -5,10 +5,10 @@ import Input from "../../component/input";
 import ButtonComponent from "../../component/button";
 import useAuth from "../../hooks/useAuth";
 import { ToastContainer } from "react-toastify";
-
+// login page----------------------------------------------------
 function LoginPage() {
   const { register, handleSubmit, errors, handleLoginUser } = useAuth();
-
+  // return ----------------------------------------
   return (
     <>
       {" "}
