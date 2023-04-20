@@ -9,7 +9,8 @@ function Cart({
   description,
   category,
   image,
-  count,
+
+  rating,
   onClick,
 }: ProductInterface) {
   // return function------------------------------------------------------
@@ -71,6 +72,7 @@ function Cart({
       </p>
       <div className="flex gap-20 mt-2">
         <p>$ {price}</p>
+
         <div className="w-[2.7rem] h-[2.7rem] bg-button flex justify-center items-center rounded-[0.4rem]">
           <Icon
             icon="solar:cart-3-bold"
