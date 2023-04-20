@@ -2,7 +2,22 @@ import banner from "../../../public/image/banner.png";
 import banner2 from "../../../public/image/banner2.png";
 import { Icon } from "@iconify/react";
 import Cart from "../../component/Cart";
+import { useDispatch, useSelector } from "react-redux";
+import { useEffect } from "react";
+import { fetchData } from "../../redux/fetchMidlware";
+import { PRODUCT_URL } from "../../api/endPoints";
+import { ProductInterface } from "../../types/interface";
 function LandingPage() {
+  const dispatch = useDispatch();
+  const data = useSelector((state) => state.fetchSlice.data);
+  useEffect(() => {
+    dispatch(
+      fetchData({
+        url: PRODUCT_URL,
+      })
+    );
+  }, [dispatch, data]);
+
   return (
     <div className="mb-10">
       <div>
@@ -29,10 +44,16 @@ function LandingPage() {
             </div>
           </div>
           <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4  mt-8">
-            <Cart />
-            <Cart />
-            <Cart />
-            <Cart />
+            {data.map((item: ProductInterface) => (
+              <Cart
+                price={item.price}
+                title={item.title}
+                image={item.image}
+                description={item.description}
+                id={item.id}
+                category={item.category}
+              />
+            ))}
           </div>
         </div>
       </div>
