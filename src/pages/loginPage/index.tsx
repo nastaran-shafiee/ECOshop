@@ -11,7 +11,7 @@ function LoginPage() {
         <div className="hidden lg:block">
           <img src={vector} alt="" className="h-[500px] ml-2" />
         </div>
-        <div className="flex flex-col gap-4 items-center mt-10 pr-8">
+        <form className="flex flex-col gap-4 items-center mt-10 pr-8">
           <div className="flex gap-2 items-center">
             <img src={bag} alt="" />
             <p className="text-orange-600 text-lg">ECOshop</p>
@@ -26,7 +26,7 @@ function LoginPage() {
             <Input text="Paasword" />
           </div>
           <ButtonComponent title="Login" />
-        </div>
+        </form>
       </div>
     </div>
   );
