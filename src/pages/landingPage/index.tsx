@@ -13,13 +13,24 @@ function LandingPage() {
   const dispatch = useDispatch();
   const data = useSelector((state) => state.fetchSlice.data);
   const modalMode = useSelector((state) => state.fetchSlice.modalMode);
+  const category1 = useSelector((state) => state.fetchSlice.category);
 
   useEffect(() => {
-    dispatch(
-      fetchData({
-        url: PRODUCT_URL,
-      })
-    );
+    // console.log(category);
+    if (category1 !== undefined) {
+      dispatch(
+        fetchData({
+          url: PRODUCT_URL,
+          category: category1,
+        })
+      );
+    } else {
+      dispatch(
+        fetchData({
+          url: PRODUCT_URL,
+        })
+      );
+    }
   }, [dispatch, data]);
 
   function openModal(id: number) {
@@ -56,6 +67,7 @@ function LandingPage() {
             <div className="grid gap-8 grid-cols-1 md:grid-cols-2 lg:grid-cols-4  mt-8">
               {data.map((item: ProductInterface) => (
                 <Cart
+                  key={item.id}
                   price={item.price}
                   title={item.title}
                   image={item.image}
