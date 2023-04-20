@@ -29,7 +29,7 @@ const useAuth = () => {
   // useeffect--------------------------------------------------------------------
   useEffect(() => {
     if (Cookies.get("token")) {
-      navigate("/panel/goods");
+      navigate("/");
     }
   }, [Cookies.get("token")]);
   //useform---------------------------------------------------------------------------

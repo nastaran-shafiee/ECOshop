@@ -1,7 +1,7 @@
 import { instance } from "../../api/contannt";
 import { Dispatch } from "redux";
-import { addProducts } from "../fetchSlice";
-import { fetchDataInterface } from "../../types/interface";
+import { addProducts, singleProductFunction } from "../fetchSlice";
+import { fetchDataInterface, ProductInterface } from "../../types/interface";
 import { createDataSuccess } from "../fetchSlice";
 
 // page url---------------------------------------------------------------------------------------------------------
@@ -43,3 +43,16 @@ export const createData =
       console.log(error);
     }
   };
+// singleproduct--------------------------------------------------------------------------------------
+export const fetchSingleProduct = (productId: number, url: string) => {
+  return async (dispatch: Dispatch) => {
+    try {
+      const response = await instance.get<ProductInterface>(
+        `${url}/${productId}`
+      );
+      dispatch(singleProductFunction(response.data));
+    } catch (error) {
+      console.log(error);
+    }
+  };
+};

@@ -12,6 +12,7 @@ const initialState = {
   data: [],
   modalMode: false,
   productId: 0,
+  singleProduct: {},
 };
 // redusers-------------------------------------------------
 const FetchSlice = createSlice({
@@ -29,9 +30,16 @@ const FetchSlice = createSlice({
       state.modalMode = action.payload.mode;
       state.productId = action.payload.productId;
     },
+    singleProductFunction(state, action) {
+      state.singleProduct = action.payload;
+    },
   },
 });
 
-export const { addProducts, createDataSuccess, changeModal } =
-  FetchSlice.actions;
+export const {
+  addProducts,
+  createDataSuccess,
+  changeModal,
+  singleProductFunction,
+} = FetchSlice.actions;
 export default FetchSlice.reducer;
