@@ -17,7 +17,7 @@ export const fetchData =
     try {
       let queryUrl = `${url}`;
       if (category) {
-        queryUrl += `&category=${category}`;
+        queryUrl += `/category/${category}`;
       }
 
       if (sort) {
@@ -56,3 +56,4 @@ export const fetchSingleProduct = (productId: number, url: string) => {
     }
   };
 };
+// fetch category-----------------------------------------------------
