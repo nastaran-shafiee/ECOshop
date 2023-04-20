@@ -1,19 +1,55 @@
 import bag from "../../../public/image/bag.png";
 import ButtonComponent from "../../component/button";
 import { Icon } from "@iconify/react";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { instance } from "../../api/contannt";
+import { addcategory } from "../../redux/fetchSlice";
 function HeaderPage() {
+  const [data, setData] = useState(null);
+  const dispatch = useDispatch();
+  const [selectedCategory, setSelectedCategory] = useState(null);
+  useEffect(() => {
+    instance.get("/products/categories").then((response) => {
+      setData(response.data);
+    });
+  }, []);
   return (
     <header className="w-full justify-center md:justify-around gap-3 lg:w-full h-[6.375rem] flex lg:justify-around items-center lg:border">
       <div className="flex gap-2 items-center">
         <img src={bag} alt="" />
-        <p className="hidden lg:block text-orange-600 text-lg">ECOshop</p>
+        <p
+          className="hidden lg:block text-orange-600 text-lg cursor-pointer"
+          onClick={() => {
+            return dispatch(addcategory(undefined));
+          }}
+        >
+          ECOshop
+        </p>
       </div>
       <div className="flex gap-2 lg:gap-8 lg:mr-40">
-        <p>electronic</p>
-        <p>women</p>
-        <p>men</p>
-        <p>jewelry</p>
+        {data &&
+          data.map((item: string) => (
+            <>
+              <div className="flex flex-col gap-2">
+                <p
+                  key={item}
+                  className="cursor-pointer"
+                  onClick={() => {
+                    setSelectedCategory(item);
+                    return dispatch(addcategory(item));
+                  }}
+                >
+                  {item}
+                </p>
+                {selectedCategory === item && (
+                  <hr className="w-full h-[4px] bg-purpleC rounded-t-[10px]" />
+                )}
+              </div>
+            </>
+          ))}
       </div>
+
       <div className="flex gap-4">
         <div className="w-[2.7rem] h-[2.7rem] bg-button flex justify-center items-center rounded-[0.4rem]">
           <Icon
