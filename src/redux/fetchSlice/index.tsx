@@ -38,6 +38,7 @@ const FetchSlice: FetchSliceInterface2 = createSlice({
       state.productId = action.payload.productId;
     },
     singleProductFunction(state, action) {
+      state.loading = true;
       state.singleProduct = action.payload;
     },
     addcategory(state, action) {

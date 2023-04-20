@@ -1,6 +1,13 @@
+import { useEffect, useState } from "react";
 import BascketCartProduct from "../../component/bascketProduct";
 
 function BascketCart() {
+  const [Carts, SetCarts] = useState([]);
+  useEffect(() => {
+    const productCart = localStorage.getItem("Cart");
+    const parsedProducts = JSON.parse(productCart!) || [];
+    SetCarts(parsedProducts);
+  }, []);
   return (
     <div className="w-full flex justify-center mt-4">
       <div className="grid grid-cols-1 lg:grid-cols-12 w-[60rem]  gap-4">
@@ -12,7 +19,18 @@ function BascketCart() {
             <p>Total</p>
           </div>
           <div>
-            <BascketCartProduct />
+            {Carts.length > 0
+              ? Carts.map((item) => {
+                  return (
+                    <BascketCartProduct
+                      image={item.image}
+                      title={item.title}
+                      price={item.price}
+                      quantity={item.rating.count}
+                    />
+                  );
+                })
+              : "your cart is  empty"}
           </div>
         </div>
 

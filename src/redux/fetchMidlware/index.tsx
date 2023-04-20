@@ -50,7 +50,9 @@ export const fetchSingleProduct = (productId: number, url: string) => {
       const response = await instance.get<ProductInterface>(
         `${url}/${productId}`
       );
+      dispatch(isloding(true));
       dispatch(singleProductFunction(response.data));
+      dispatch(isloding(false));
     } catch (error) {
       console.log(error);
     }

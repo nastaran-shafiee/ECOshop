@@ -28,14 +28,18 @@ export interface fetchDataInterface {
   sort?: string | undefined;
 }
 export interface ProductInterface {
-  id?: number;
+  id?: string;
   title?: any;
   price?: number;
   description?: any;
   category?: string;
   image?: string;
-  count?: number;
+
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
+  rating?: {
+    rate?: string | undefined;
+    count?: string | undefined;
+  };
 }
 
 export interface InitialStateInterface {
@@ -45,4 +49,11 @@ export interface InitialStateInterface {
   singleProduct: ProductInterface;
   category: undefined | string;
   loading: boolean;
+}
+export interface BascketCartProductInterface {
+  image?: string;
+  title?: string;
+  price?: string;
+  totalPrice?: string;
+  quantity?: string;
 }

@@ -40,7 +40,8 @@ function LandingPage() {
   }, [dispatch, category1]);
   // openModal function----------------------------------------------------
 
-  function openModal(id: number) {
+  function openModal(id: string | undefined) {
+    dispatch(isloding(true));
     dispatch(changeModal({ mode: true, productId: id }));
   }
   // return function-----------------------------------------
