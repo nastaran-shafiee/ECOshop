@@ -6,6 +6,8 @@ export interface inputInterface {
   placeholder?: string;
   clasname3?: string;
   text?: string;
+  error?: string | any;
+  validation?: any;
   onChange?: (e: ChangeEvent<HTMLInputElement>) => void;
 }
 export interface buttonInterface {
@@ -14,4 +16,8 @@ export interface buttonInterface {
   onClick?: (event: React.MouseEvent<HTMLElement>) => void;
   type?: "submit" | "reset" | "button" | undefined;
   disabled?: boolean;
+}
+export interface authInterface {
+  username: string;
+  password: string;
 }

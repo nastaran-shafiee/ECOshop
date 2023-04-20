@@ -7,6 +7,9 @@ function Input({
   clasname3,
   placeholder,
   text,
+  error,
+  validation,
+
   onChange,
 }: inputInterface) {
   return (
@@ -22,8 +25,10 @@ function Input({
         type={type}
         className={`border-none outline-none ${className}`}
         placeholder={placeholder}
+        {...validation}
         onChange={onChange}
       />
+      <p className="text-red-500 text-sm">{error}</p>
     </div>
   );
 }
