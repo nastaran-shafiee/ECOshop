@@ -7,7 +7,7 @@ import { useEffect } from "react";
 import { fetchData } from "../../redux/fetchMidlware";
 import { PRODUCT_URL } from "../../api/endPoints";
 import { ProductInterface } from "../../types/interface";
-import SinglePage from "../../layout/singlePage";
+import SinglePage from "../singlePage";
 import { changeModal, isloding } from "../../redux/fetchSlice";
 import { RootState } from "../../redux/store";
 // landing page-------------------------------------------------------
