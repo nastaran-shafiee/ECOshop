@@ -1,13 +1,19 @@
+import { useEffect, useState } from "react";
 import ButtonComponent from "../../component/button";
 import Input from "../../component/input";
 
 function PaymentPage() {
+  const [price, setPrice] = useState(0);
+  useEffect(() => {
+    const number = localStorage.getItem("total");
+    setPrice(Number(number));
+  }, [localStorage.getItem("total")]);
   return (
     <div className="flex justify-center">
       <div className="flex w-[90%] lg:w-[35rem] bg-white flex-col items-center mb-8">
         <div className="bg-white mt-8 mb-4 border w-full flex  items-center pl-24 h-[5.1rem] rounded-[0.7rem]">
           <p>Total Amount: </p>
-          <p>$ 1.620</p>
+          <p>$ {price}</p>
         </div>
         <div className="bg-table h-[3.8rem] w-full flex  items-center lg:pl-24 justify-start pl-8">
           Payments
