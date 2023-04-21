@@ -58,7 +58,7 @@ function LandingPage() {
         </div>
         <div className=" flex justify-center ">
           <div className="w-[70%] md:w-[80%] lg:w-[60rem] flex flex-col items-center ">
-            <div className="flex gap-4 w-full mt-8 ">
+            <div className="text-[10px] lg:text-[16px] flex gap-4 w-full mt-8 ">
               <div className="flex">
                 <Icon icon="icons8:generic-sorting" width="30" height="30" />
                 <p>sorting</p>

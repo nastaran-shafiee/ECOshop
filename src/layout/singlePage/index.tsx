@@ -46,7 +46,7 @@ function SinglePage() {
   // return----------------------------------------------------------
   return (
     <div className="w-full h-full bg-whiteC absolute top-0 bottom-0">
-      <div className=" w-full top-20 left-[10%] lg:w-[70%] h-[29rem] bg-white sticky lg:left-[15%] lg:top-[5%] rounded-[10px]">
+      <div className="left-4 w-[90%] h-[35rem] top-20 lg:w-[70%] lg:h-[29rem] bg-white sticky lg:left-[15%] lg:top-[5%] rounded-[10px]">
         <div className="w-full bg-table h-[3.87rem] flex ">
           <Icon
             icon="mdi:close-circle"
@@ -54,7 +54,7 @@ function SinglePage() {
             height="20"
             onClick={closeNodal}
           />
-          <div className="flex w-full justify-around gap-60 items-center">
+          <div className="gap-0 flex w-full justify-around lg:gap-60 items-center">
             <p>Product details</p>
 
             <div className="flex">
@@ -69,19 +69,19 @@ function SinglePage() {
           </div>
         </div>
 
-        <div className="w-full h-[24.3rem] flex justify-center items-center ">
+        <div className="w-full  justify-start flex-col lg:flex-row h-[24.3rem] flex lg: items-center lg:justify-center ">
           {loading ? (
             "loading"
           ) : (
             <>
-              <div className="w-[40%]">
+              <div className="mt-2 w-[80%] lg:w-[40%]">
                 <img
                   src={product.image}
                   alt=""
-                  className="w-[356px] h-[257px]"
+                  className="w-[270px] h-[198px] lg:w-[356px] lg:h-[257px]"
                 />
               </div>
-              <div className="flex flex-col w-[40%] gap-8">
+              <div className="w-[80%] flex flex-col lg:w-[40%] gap-8">
                 <p>{product.title}</p>
                 <p className="text-[10px] text-grayC">{product.description}</p>
                 <div className="flex justify-between">

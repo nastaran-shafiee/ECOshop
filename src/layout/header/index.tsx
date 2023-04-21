@@ -42,7 +42,7 @@ function HeaderPage() {
         {data &&
           data.map((item: string) => (
             <>
-              <div className="flex flex-col gap-2">
+              <div className="text-[7px] lg:text-[18px] flex flex-col gap-2">
                 <p
                   key={item}
                   className="cursor-pointer"
