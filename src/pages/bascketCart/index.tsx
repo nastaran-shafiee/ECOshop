@@ -10,13 +10,13 @@ function BascketCart() {
   }, []);
   return (
     <div className="w-full flex justify-center mt-4">
-      <div className="grid grid-cols-1 lg:grid-cols-12 w-[60rem]  gap-4">
-        <div className="col-span-1 lg:col-span-9 ">
-          <div className=" h-[3.9rem] bg-table flex justify-around items-center rounded-t-[10px]">
-            <p>Product details</p>
-            <p>Name</p>
-            <p>price</p>
-            <p>Total</p>
+      <div className="w-[90%] grid grid-cols-1 lg:grid-cols-12 lg:w-[60rem]  gap-4">
+        <div className="col-span-1 lg:col-span-9 h-[20rem] lg:auto mb-10">
+          <div className="justify-start h-[3.9rem] bg-table flex lg:justify-around items-center rounded-t-[10px]">
+            <p className="ml-2 lg:ml-0">Product details</p>
+            <p className="hidden lg:block">Name</p>
+            <p className="hidden lg:block">price</p>
+            <p className="hidden lg:block">Total</p>
           </div>
           <div>
             {Carts.length > 0
