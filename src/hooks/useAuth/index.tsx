@@ -14,14 +14,8 @@ const loginUserSrvice = (data: authInterface) =>
   instance.post("/auth/login", data);
 // yup objecct------------------------------------------------------------------
 const loginSchema = yup.object({
-  username: yup
-    .string()
-    .required("پر کردن این فیلد الزامی است")
-    .min(5, "کاربری باید بیش از 4 کاراکتر باشد"),
-  password: yup
-    .string()
-    .required("پر کردن این فیلد الزامی است")
-    .min(5, "رمز عبور باید بیش از 4 کاراکتر باشد"),
+  username: yup.string().required("required").min(5, "more than 4 ch"),
+  password: yup.string().required("required1").min(5, "more than 4 ch"),
 });
 // function useath------------------------------------------------------
 const useAuth = () => {
@@ -56,7 +50,7 @@ const useAuth = () => {
       }
       console.log("hi");
     } catch (ex) {
-      toast.error("شما دسترسی لازم برای ورود را ندارید");
+      toast.error("you can enter the site");
     }
   };
   // return hook---------------------------------------------------------------------

@@ -18,7 +18,7 @@ function BascketCartProduct({
         />
         <p className="text-[0.7rem] lg:text-[0.8rem] w-[8.7rem]">{title} </p>
         <p className="text-[0.7rem] lg:text-[0.9rem]">$ {price}</p>
-        <p className="text-[0.7rem] lg:text-[0.9rem]">$ {totalPrice}</p>
+        <p className="text-[0.7rem] lg:text-[0.9rem]">$ {price}</p>
       </div>
       <div className="ml-4 self-start flex items-center gap-2 lg:ml-14 mt-2 ">
         <div className="w-[1.5rem] h-[1.5rem] bg-orange-600 rounded-[50%] flex justify-center items-center text-white">

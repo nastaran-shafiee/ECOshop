@@ -7,6 +7,7 @@ import { useEffect } from "react";
 import { fetchSingleProduct } from "../../redux/fetchMidlware";
 import { PRODUCT_URL } from "../../api/endPoints";
 import { RootState } from "../../redux/store";
+import { useNavigate } from "react-router-dom";
 // singlepage-------------------------------------------------
 function SinglePage() {
   const modalMode = useSelector(
@@ -21,6 +22,7 @@ function SinglePage() {
   const loading = useSelector((state: RootState) => state.fetchSlice.loading);
 
   const dispatch = useDispatch();
+  const navigate = useNavigate();
   // closeModal-------------------------------------------------------------
   function closeNodal() {
     dispatch(changeModal({ mode: false }));
@@ -39,6 +41,7 @@ function SinglePage() {
     } else {
       localStorage.setItem("Cart", JSON.stringify([product]));
     }
+    navigate("/Cart");
   }
   // return----------------------------------------------------------
   return (
