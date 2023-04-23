@@ -37,13 +37,13 @@ function PaymentPage() {
               text="Year"
               className="bg-table2 !w-[8rem]"
               classname2="!bg-table2 !w-[4rem]"
-              clasname3="w-[8rem]"
+              clasname3="w-[8rem] lg:w-[10.5rem]"
             />
             <Input
               text="Month"
               className="bg-table2 !w-[8rem]"
               classname2="!bg-table2 !w-[4rem]"
-              clasname3="w-[8rem]"
+              clasname3="w-[8rem ] lg:w-[10.5rem]"
             />
           </div>
           <Input
