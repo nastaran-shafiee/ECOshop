@@ -9,9 +9,12 @@ import { authInterface } from "../../types/interface";
 import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { PRODUCT_URL } from "../../api/endPoints";
+import { useDispatch } from "react-redux";
+import { changeModal } from "../../redux/fetchSlice";
 
 // function useath------------------------------------------------------
 const useAdd = () => {
+  const dispath = useDispatch();
   // yup objecct------------------------------------------------------------------
   const loginSchema = yup.object({
     title: yup.string().required("required").min(4, "more than 4 ch"),
@@ -38,8 +41,9 @@ const useAdd = () => {
   const handleLoginUser = async (data: any) => {
     try {
       instance.post(PRODUCT_URL, data);
+      dispath(changeModal(true));
     } catch (ex) {
-      toast.error("you can enter the site");
+      console.log("error");
     }
   };
   // return hook---------------------------------------------------------------------

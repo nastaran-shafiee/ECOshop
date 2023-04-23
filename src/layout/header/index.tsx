@@ -80,7 +80,13 @@ function HeaderPage() {
             className="text-white"
           />
         </div>
-        <ButtonComponent title="AddProduct" className="hidden lg:block" />
+        <ButtonComponent
+          title="AddProduct"
+          className="hidden lg:block"
+          onClick={() => {
+            navigate("/add");
+          }}
+        />
       </div>
     </header>
   );

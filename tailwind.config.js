@@ -13,6 +13,8 @@ export default {
         table: "#E4E4E4",
         table2: "#F9F9F9",
         whiteC: "	rgb(0,0,0,0.5)",
+        success: "#E8FFE4",
+        greenC: "#1BAC03",
       },
       backgroundImage: {
         "hero-lg": "url('../ECOshop/public/image/bg 2.png')",
