@@ -14,6 +14,8 @@ login <img src="https://user-images.githubusercontent.com/115412256/233838527-7c
 <hr> 
 cartPage <img src="https://user-images.githubusercontent.com/115412256/233838586-ad58951a-afbb-4746-ac2e-358bfa38385f.PNG" alt="tel" width="300" height="400" />
 cart <img src="https://user-images.githubusercontent.com/115412256/233838632-85743a48-c005-4b7d-94d0-4b261a5d6bee.PNG" alt="tel" width="300" height="200" />
+<hr> 
+ 
 cart <img src="https://user-images.githubusercontent.com/115412256/233838653-b7a815a9-b237-4318-bdf2-bd909984e1c7.PNG" alt="tel" width="300" height="200" />
  
 <hr> 
