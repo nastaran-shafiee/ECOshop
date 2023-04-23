@@ -21,7 +21,7 @@ export const fetchData =
 
       if (sort) {
         // add sorting parameter to the query URL
-        queryUrl += `&_sort=createdAt&_order=desc`;
+        queryUrl += `?${sort}`;
       }
       const res = await instance.get(queryUrl);
       dispatch(isloding(true));
