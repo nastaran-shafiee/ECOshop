@@ -47,6 +47,7 @@ function SinglePage() {
       localStorage.setItem("Cart", JSON.stringify([SendProduct]));
       localStorage.setItem("price", JSON.stringify(product.price));
     }
+    dispatch(changeModal(false));
     navigate("/Cart");
   }
 

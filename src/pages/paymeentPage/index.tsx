@@ -21,9 +21,7 @@ function PaymentPage() {
   }
   return (
     <>
-      <div className="!relative">
-        {modalMode ? <Success price={price} /> : " "}
-      </div>
+      <div className="!relative">{modalMode ? <Success /> : " "}</div>
 
       <div className="flex justify-center">
         <div className="flex w-[90%] lg:w-[35rem] bg-white flex-col items-center mb-8">

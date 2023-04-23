@@ -112,6 +112,7 @@ function BascketCart() {
               onClick={() => {
                 setCash(false);
                 setColor(false);
+                setInterest(false);
               }}
               className={
                 !color
@@ -170,7 +171,15 @@ function BascketCart() {
                   <span className="text-sm text-grayC">-5% interesr</span>
                 </div>
                 {interst ? (
-                  <div className="flex justify-center items-center flex-col gap-4 mt-4"></div>
+                  <>
+                    <hr className="w-full h-[2px]" />
+                    <div className="flex justify-center items-center flex-col gap-4 mt-4">
+                      <p>
+                        total : {(price - price * interestRate).toFixed(2)}{" "}
+                      </p>
+                      <p>interest : {(price * interestRate).toFixed(2)} </p>
+                    </div>
+                  </>
                 ) : (
                   " "
                 )}

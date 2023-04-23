@@ -1,6 +1,23 @@
 import ButtonComponent from "../../component/button";
 import { Icon } from "@iconify/react";
-function Success({ price }: any) {
+import { useNavigate } from "react-router-dom";
+import { useDispatch } from "react-redux";
+import { changeModal } from "../../redux/fetchSlice";
+import { useEffect, useState } from "react";
+function Success() {
+  const navigate = useNavigate();
+  const dispatch = useDispatch();
+  const [price, setPrice] = useState(0);
+  useEffect(() => {
+    const number = localStorage.getItem("total");
+    setPrice(Number(number));
+  }, [localStorage.getItem("total")]);
+  function site() {
+    dispatch(changeModal(false));
+    localStorage.clear();
+
+    navigate("/");
+  }
   return (
     <div className="w-full h-[1000px] bg-whiteC absolute top-0 bottom-0 ">
       <div className="left-4 w-[90%] h-[30rem] top-20 lg:w-[545px] lg:h-[403px] bg-success absolute lg:left-[30%] lg:top-[10%] rounded-[10px] !z-100">
@@ -33,6 +50,7 @@ function Success({ price }: any) {
             <ButtonComponent
               title="Complete transaction"
               className="bg-greenC mt-10"
+              onClick={site}
             />
           </div>
         </div>
