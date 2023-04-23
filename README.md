@@ -9,19 +9,21 @@ landing <img src="https://user-images.githubusercontent.com/115412256/233838353-
 singlePage <img src="https://user-images.githubusercontent.com/115412256/233838393-63d0b4a1-8557-4f7f-915b-72ff1ccd3f01.PNG" alt="tel" width="300" height="200" />
 singlePage <img src="https://user-images.githubusercontent.com/115412256/233838473-b3571705-8fec-4f6b-929e-66ca404ed932.PNG" alt="tel" width="300" height="400" />
 <hr> 
-singlePage <img src="https://user-images.githubusercontent.com/115412256/232708870-139a3918-f5ef-4a9b-b567-3face4bf1cf5.png" alt="tel" width="300" height="200" />
-singlePage2 <img src="https://user-images.githubusercontent.com/115412256/232709161-b9b95f9a-fb48-440b-b72b-a5da89cd504e.png" alt="tel" width="300" height="200" />
+login <img src="https://user-images.githubusercontent.com/115412256/233838527-7c67a96d-0360-492d-8d75-04c931e70ac1.png" alt="tel" width="300" height="200" />
+
 <hr> 
-cartPage <img src="https://user-images.githubusercontent.com/115412256/232709372-60745e49-62a9-4f59-bb2a-f48d1df6c908.png" alt="tel" width="300" height="200" />
-payment <img src="https://user-images.githubusercontent.com/115412256/232709588-f2584339-f22d-4ba3-b85a-f8f670672948.png" alt="tel" width="300" height="200" />
+cartPage <img src="https://user-images.githubusercontent.com/115412256/233838586-ad58951a-afbb-4746-ac2e-358bfa38385f.PNG" alt="tel" width="300" height="400" />
+cart <img src="https://user-images.githubusercontent.com/115412256/233838632-85743a48-c005-4b7d-94d0-4b261a5d6bee.PNG" alt="tel" width="300" height="200" />
+cart <img src="https://user-images.githubusercontent.com/115412256/233838653-b7a815a9-b237-4318-bdf2-bd909984e1c7.PNG" alt="tel" width="300" height="200" />
+ 
 <hr> 
-loging <img src="https://user-images.githubusercontent.com/115412256/232709841-8274cbab-64bd-4ca4-aae4-32b722970859.png" alt="tel" width="300" height="200" />
-adminProducts <img src="https://user-images.githubusercontent.com/115412256/232710049-1140b27d-6882-49f5-a695-291e968704bc.png" alt="tel" width="300" height="200" /> 
+payment <img src="https://user-images.githubusercontent.com/115412256/233838683-88349f12-552c-4da2-b77a-56a3bc337080.PNG" alt="tel" width="300" height="200" />
+payment <img src="https://user-images.githubusercontent.com/115412256/233838735-8275f6f6-95d5-47f9-ae21-b7395eff5b6a.PNG" alt="tel" width="300" height="400" /> 
  <hr> 
-investory <img src="https://user-images.githubusercontent.com/115412256/232710527-cb2b8b7d-26cc-4e20-bf90-80b1acf8990a.png" alt="tel" width="300" height="200" />
-orderlist <img src="https://user-images.githubusercontent.com/115412256/232710702-6cab35c2-72b4-473a-8705-7de38b6df660.png" alt="tel" width="300" height="200" />
+add product <img src="https://user-images.githubusercontent.com/115412256/233838789-bc1789c0-b438-4743-9076-29bbfdb11efc.png" alt="tel" width="300" height="200" />
+add product <img src="https://user-images.githubusercontent.com/115412256/233838861-b9a15338-a3d3-4397-a88a-9cdc61461edf.png" alt="tel" width="300" height="400" />
  <hr> 
-setting <img src="https://user-images.githubusercontent.com/115412256/232710965-64c89574-4839-4493-bc39-67365028c066.png" alt="tel" width="300" height="200" />
+
  
  
  
