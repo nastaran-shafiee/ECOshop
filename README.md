@@ -7,7 +7,7 @@ landing <img src="https://user-images.githubusercontent.com/115412256/233838353-
 <hr> 
  
 singlePage <img src="https://user-images.githubusercontent.com/115412256/233838393-63d0b4a1-8557-4f7f-915b-72ff1ccd3f01.PNG" alt="tel" width="300" height="200" />
-singlePage <img src="https://user-images.githubusercontent.com/115412256/233838473-b3571705-8fec-4f6b-929e-66ca404ed932.PNG" alt="tel" width="300" height="500" />
+singlePage <img src="https://user-images.githubusercontent.com/115412256/233838473-b3571705-8fec-4f6b-929e-66ca404ed932.PNG" alt="tel" width="300" height="400" />
 <hr> 
 singlePage <img src="https://user-images.githubusercontent.com/115412256/232708870-139a3918-f5ef-4a9b-b567-3face4bf1cf5.png" alt="tel" width="300" height="200" />
 singlePage2 <img src="https://user-images.githubusercontent.com/115412256/232709161-b9b95f9a-fb48-440b-b72b-a5da89cd504e.png" alt="tel" width="300" height="200" />
