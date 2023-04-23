@@ -4,7 +4,11 @@ import {
   Slice,
   SliceCaseReducers,
 } from "@reduxjs/toolkit";
-import { InitialStateInterface } from "../../types/interface";
+import {
+  FetchSliceInterface,
+  InitialStateInterface,
+  ProductInterface,
+} from "../../types/interface";
 
 interface FetchSliceInterface2
   extends Slice<
@@ -12,6 +16,7 @@ interface FetchSliceInterface2
     SliceCaseReducers<InitialStateInterface>,
     "fetchProducts"
   > {}
+
 // inintial interface-----------------------------------------------
 const initialState: InitialStateInterface = {
   data: [],
@@ -26,7 +31,10 @@ const FetchSlice: FetchSliceInterface2 = createSlice({
   name: "fetchProducts",
   initialState: initialState,
   reducers: {
-    addProducts(state, action) {
+    addProducts(
+      state: InitialStateInterface,
+      action: PayloadAction<ProductInterface[]>
+    ) {
       state.data = action.payload;
     },
 
@@ -38,7 +46,6 @@ const FetchSlice: FetchSliceInterface2 = createSlice({
       state.productId = action.payload.productId;
     },
     singleProductFunction(state, action) {
-      state.loading = true;
       state.singleProduct = action.payload;
     },
     addcategory(state, action) {

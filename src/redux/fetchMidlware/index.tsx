@@ -12,7 +12,7 @@ export const fetchData =
     category,
     sort, // new parameter for sorting
   }: fetchDataInterface) =>
-  async (dispatch: Dispatch<AnyAction>) => {
+  async (dispatch: Dispatch) => {
     try {
       let queryUrl = `${url}`;
       if (category) {

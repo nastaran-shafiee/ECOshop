@@ -1,5 +1,11 @@
 import { ChangeEvent } from "react";
-import { Slice, PayloadAction } from "@reduxjs/toolkit";
+
+import {
+  createSlice,
+  PayloadAction,
+  Slice,
+  SliceCaseReducers,
+} from "@reduxjs/toolkit";
 export interface inputInterface {
   type?: string;
   className?: string;
@@ -42,14 +48,6 @@ export interface ProductInterface {
   };
 }
 
-export interface InitialStateInterface {
-  data: ProductInterface[];
-  modalMode: boolean;
-  productId: number;
-  singleProduct: ProductInterface;
-  category: undefined | string;
-  loading: boolean;
-}
 export interface BascketCartProductInterface {
   image?: string;
   title?: string;
@@ -62,4 +60,48 @@ export interface CartItem {
   title: string;
   price: string;
   quantity: string;
+}
+export interface InitialStateInterface {
+  data: ProductInterface[];
+  modalMode: boolean;
+  productId: number;
+  singleProduct: ProductInterface;
+  category: undefined | string;
+  loading: boolean;
+}
+
+export interface FetchSliceInterface {
+  name: string;
+  initialState: InitialStateInterface;
+  reducers: {
+    addProducts(
+      state: InitialStateInterface,
+      action: PayloadAction<ProductInterface[]>
+    ): void;
+
+    createDataSuccess(
+      state: InitialStateInterface,
+      action: PayloadAction<ProductInterface>
+    ): void;
+
+    changeModal(
+      state: InitialStateInterface,
+      action: PayloadAction<boolean>
+    ): void;
+
+    singleProductFunction(
+      state: InitialStateInterface,
+      action: PayloadAction<ProductInterface>
+    ): void;
+
+    addcategory(
+      state: InitialStateInterface,
+      action: PayloadAction<string>
+    ): void;
+
+    isloding(
+      state: InitialStateInterface,
+      action: PayloadAction<boolean>
+    ): void;
+  };
 }
