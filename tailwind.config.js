@@ -15,6 +15,7 @@ export default {
         whiteC: "	rgb(0,0,0,0.5)",
         success: "#E8FFE4",
         greenC: "#1BAC03",
+        blueC: "#6F11E1",
       },
       backgroundImage: {
         "hero-lg": "url('../ECOshop/public/image/bg 2.png')",
