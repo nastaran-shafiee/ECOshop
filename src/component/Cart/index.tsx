@@ -1,17 +1,33 @@
 import shoe from "../../../public/image/shoe.png";
 import { Icon } from "@iconify/react";
-function Cart() {
+import { ProductInterface } from "../../types/interface";
+// function cart--------------------------------------------------
+function Cart({
+  id,
+  title,
+  price,
+  description,
+  category,
+  image,
+
+  rating,
+  onClick,
+}: ProductInterface) {
+  // return function------------------------------------------------------
   return (
-    <div className="w-[15rem] h-[25rem] flex flex-col items-center border shadow rounded-[0.7rem] pt-2">
+    <div
+      className="w-[15rem] h-[25rem] flex flex-col items-center border shadow rounded-[0.7rem] pt-2"
+      onClick={onClick}
+    >
       <img
-        src={shoe}
+        src={image}
         alt=""
         className="w-[14rem] h-[11.2rem] rounded-[0.7rem]"
       />
-      <div className="flex gap-14">
-        <div className="w-[4.37rem] h-[1.5rem] bg-orange-600 text-white rounded-[1.25rem] flex justify-center">
+      <div className="flex gap-10 mt-2">
+        <div className="w-[5.3rem] h-[1.5rem] bg-orange-600 text-white rounded-[1.25rem] flex justify-center text-[10px] items-center">
           {" "}
-          clothes
+          <p> {category}</p>
         </div>
         <div className="flex">
           <Icon
@@ -46,17 +62,17 @@ function Cart() {
           />
         </div>
       </div>
-      <p className="ml-2 mt-2 text-lg font-medium">
+      <p className="ml-2 mt-2 text-lg font-medium min-h-[50px]">
         {" "}
-        Nike Triple Black Air Force 1 '07 sneakers
+        {title.split(" ").slice(0, 5).join(" ")}
       </p>
-      <p className="ml-2 mt-2 text-[0.7rem] text-grayC">
+      <p className="ml-2 mt-2 text-[0.7rem] text-grayC min-h-[50px]">
         {" "}
-        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis rem
-        voluptate porro, corporis consequuntur commodi mollitia suscipit
+        {description.split(" ").slice(0, 15).join(" ")}...
       </p>
       <div className="flex gap-20 mt-2">
-        <p>$ 1620</p>
+        <p>$ {price}</p>
+
         <div className="w-[2.7rem] h-[2.7rem] bg-button flex justify-center items-center rounded-[0.4rem]">
           <Icon
             icon="solar:cart-3-bold"
