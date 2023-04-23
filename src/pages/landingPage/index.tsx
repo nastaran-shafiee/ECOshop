@@ -45,6 +45,23 @@ function LandingPage() {
     dispatch(changeModal({ mode: true, productId: id }));
   }
   // return function-----------------------------------------
+  function Ascending() {
+    dispatch(
+      fetchData({
+        url: PRODUCT_URL,
+        sort: "sort=Asc",
+      })
+    );
+  }
+  // function descending
+  function descending() {
+    dispatch(
+      fetchData({
+        url: PRODUCT_URL,
+        sort: "sort=desc",
+      })
+    );
+  }
   return (
     <div className="relative">
       <div className="mb-10 relative">
@@ -65,11 +82,15 @@ function LandingPage() {
               </div>
               <div className="flex">
                 <Icon icon="mdi:arrow-top" width="30" height="30" />
-                <p>Ascending</p>
+                <p className="cursor-pointer" onClick={Ascending}>
+                  Ascending
+                </p>
               </div>
               <div className="flex">
                 <Icon icon="mdi:arrow-bottom" width="30" height="30" />
-                <p>descending</p>
+                <p className="cursor-pointer" onClick={descending}>
+                  descending
+                </p>
               </div>
             </div>
             {loading ? (
