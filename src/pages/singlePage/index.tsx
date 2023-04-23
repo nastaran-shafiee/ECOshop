@@ -37,7 +37,7 @@ function SinglePage() {
       ...product,
       quantity: 1,
     };
-    let cart = localStorage.getItem("Cart");
+    let cart: any = localStorage.getItem("Cart");
     if (cart) {
       cart = JSON.parse(cart);
       cart.push(SendProduct);
@@ -49,6 +49,7 @@ function SinglePage() {
     }
     navigate("/Cart");
   }
+
   // return----------------------------------------------------------
   return (
     <div className="w-full h-full bg-whiteC absolute top-0 bottom-0">

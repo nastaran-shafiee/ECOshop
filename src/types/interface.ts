@@ -57,3 +57,9 @@ export interface BascketCartProductInterface {
   totalPrice?: string;
   quantity?: string;
 }
+export interface CartItem {
+  image: string;
+  title: string;
+  price: string;
+  quantity: string;
+}
