@@ -10,7 +10,7 @@ import { toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { PRODUCT_URL } from "../../api/endPoints";
 import { useDispatch } from "react-redux";
-import { changeModal } from "../../redux/fetchSlice";
+import { changeAdd, changeModal } from "../../redux/fetchSlice";
 
 // function useath------------------------------------------------------
 const useAdd = () => {
@@ -41,7 +41,7 @@ const useAdd = () => {
   const handleLoginUser = async (data: any) => {
     try {
       instance.post(PRODUCT_URL, data);
-      dispath(changeModal(true));
+      dispath(changeAdd({ mode: true, add: data }));
     } catch (ex) {
       console.log("error");
     }

@@ -68,6 +68,7 @@ export interface InitialStateInterface {
   singleProduct: ProductInterface;
   category: undefined | string;
   loading: boolean;
+  add: any;
 }
 
 export interface FetchSliceInterface {

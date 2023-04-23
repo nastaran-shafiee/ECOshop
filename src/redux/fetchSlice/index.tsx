@@ -25,6 +25,7 @@ const initialState: InitialStateInterface = {
   singleProduct: {},
   category: undefined,
   loading: true,
+  add: {},
 };
 // redusers-------------------------------------------------
 const FetchSlice: FetchSliceInterface2 = createSlice({
@@ -55,6 +56,10 @@ const FetchSlice: FetchSliceInterface2 = createSlice({
     isloding(state, action) {
       state.loading = action.payload;
     },
+    changeAdd(state, action) {
+      state.modalMode = action.payload.mode;
+      state.add = action.payload.add;
+    },
   },
 });
 
@@ -65,5 +70,6 @@ export const {
   singleProductFunction,
   addcategory,
   isloding,
+  changeAdd,
 } = FetchSlice.actions;
 export default FetchSlice.reducer;

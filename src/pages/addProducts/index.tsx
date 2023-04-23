@@ -33,7 +33,9 @@ function AddProductsPage() {
               validation={{ ...register("title") }}
               className=" bg-table2"
               classname2=" !bg-table2 "
-              clasname3="w-[266px] h-[42px] lg:w-[22.4rem] "
+              clasname3={
+                modalMode ? "!static" : "w-[266px] h-[42px] lg:w-[22.4rem] "
+              }
             />
             <Input
               text="Description"
@@ -41,7 +43,9 @@ function AddProductsPage() {
               validation={{ ...register("Description") }}
               className="bg-table2"
               classname2=" !bg-table2 "
-              clasname3="w-[266px] h-[42px] lg:w-[22.4rem] "
+              clasname3={
+                modalMode ? "!static" : "w-[266px] h-[42px] lg:w-[22.4rem] "
+              }
             />
             <Input
               text="category"
@@ -49,7 +53,9 @@ function AddProductsPage() {
               validation={{ ...register("category") }}
               className="bg-table2"
               classname2=" !bg-table2 "
-              clasname3="w-[266px] h-[42px] lg:w-[22.4rem] "
+              clasname3={
+                modalMode ? "!static" : "w-[266px] h-[42px] lg:w-[22.4rem] "
+              }
             />
             <Input
               text="Image URL"
@@ -57,7 +63,9 @@ function AddProductsPage() {
               validation={{ ...register("ImageURL") }}
               className="bg-table2"
               classname2=" !bg-table2 "
-              clasname3="w-[266px] h-[42px] lg:w-[22.4rem] "
+              clasname3={
+                modalMode ? "!static" : "w-[266px] h-[42px] lg:w-[22.4rem] "
+              }
             />
             <Input
               text="price"
@@ -65,7 +73,9 @@ function AddProductsPage() {
               validation={{ ...register("price") }}
               className="bg-table2"
               classname2=" !bg-table2 "
-              clasname3="w-[266px] h-[42px] lg:w-[22.4rem] "
+              clasname3={
+                modalMode ? "!static" : "w-[266px] h-[42px] lg:w-[22.4rem] "
+              }
             />
           </div>
           <div className=" w-full pt-8 flex gap-4 bg-table2 justify-center">

@@ -38,7 +38,7 @@ function PaymentPage() {
               className="bg-table2"
               classname2="!bg-table2 w-[150px]"
               clasname3={
-                modalMode ? "!hidden" : "w-[266px] h-[42px] lg:w-[22.4rem]"
+                modalMode ? "!static" : "w-[266px] h-[42px] lg:w-[22.4rem]"
               }
             />
 
@@ -47,7 +47,7 @@ function PaymentPage() {
               className="bg-table2"
               classname2=" !bg-table2 "
               clasname3={
-                modalMode ? "!hidden" : "w-[266px] h-[42px] lg:w-[22.4rem]"
+                modalMode ? "!static" : "w-[266px] h-[42px] lg:w-[22.4rem]"
               }
             />
             <div className={modalMode ? "hidden" : "flex gap-4"}>
@@ -55,13 +55,13 @@ function PaymentPage() {
                 text="Year"
                 className="bg-table2 !w-[8rem]"
                 classname2="!bg-table2 !w-[4rem]"
-                clasname3={modalMode ? "!hidden" : "w-[8rem] lg:w-[10.5rem]"}
+                clasname3={modalMode ? "!static" : "w-[8rem] lg:w-[10.5rem]"}
               />
               <Input
                 text="Month"
                 className="bg-table2 !w-[8rem]"
                 classname2="!bg-table2 !w-[4rem]"
-                clasname3={modalMode ? "!hidden" : "w-[8rem] lg:w-[10.5rem]"}
+                clasname3={modalMode ? "!static" : "w-[8rem] lg:w-[10.5rem]"}
               />
             </div>
             <Input
@@ -69,7 +69,7 @@ function PaymentPage() {
               className="bg-table2"
               classname2="!bg-table2"
               clasname3={
-                modalMode ? "!hidden" : "w-[266px] h-[42px] lg:w-[22.4rem]"
+                modalMode ? "!static" : "w-[266px] h-[42px] lg:w-[22.4rem]"
               }
             />
           </div>
