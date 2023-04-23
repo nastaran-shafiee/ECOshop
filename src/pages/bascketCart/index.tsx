@@ -2,12 +2,14 @@ import { useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import BascketCartProduct from "../../component/bascketProduct";
 import ButtonComponent from "../../component/button";
+
+import { CartItem } from "../../types/interface";
 // bascket cart-----------------------------------------------------
 function BascketCart() {
-  const [Carts, SetCarts] = useState([]);
+  const [Carts, SetCarts] = useState<CartItem[]>([]);
   const [cash, setCash] = useState(false);
   const [color, setColor] = useState(false);
-  const [price, setPrice] = useState(0);
+  const [price, setPrice] = useState<any>(0);
   const [interst, setInterest] = useState(false);
   const [interestRate, setInterestRate] = useState(0);
   const [fristLoan, setFristLoan] = useState(0);
@@ -26,11 +28,13 @@ function BascketCart() {
 
   // function Cash----------------------------------------------------
   function Cash() {
-    localStorage.setItem("total", price);
-    localStorage.removeItem("Cart");
-    navigate("/payment");
+    if (price) {
+      localStorage.setItem("total", price.toString());
+      localStorage.removeItem("Cart");
+      navigate("/payment");
+    }
   }
-  function handleRadioChange(event) {
+  function handleRadioChange(event: React.ChangeEvent<HTMLInputElement>) {
     const value = parseInt(event.target.value);
     if (value === 3) {
       setInterestRate(0.2);
@@ -44,16 +48,19 @@ function BascketCart() {
   //function loan---------------------------------------------------------
   function loan() {
     if (interestRate === 0.2) {
-      let loanPrice =
-        (Number(price) - Number(price * interestRate)) / Number(3);
+      const loanPrice = price
+        ? (Number(price) - Number(price * interestRate)) / Number(3)
+        : 0;
       localStorage.setItem("total", loanPrice.toFixed(2));
     } else if (interestRate === 0.1) {
-      let loanPrice =
-        (Number(price) - Number(price * interestRate)) / Number(6);
+      const loanPrice = price
+        ? (Number(price) - Number(price * interestRate)) / Number(6)
+        : 0;
       localStorage.setItem("total", loanPrice.toFixed(2));
     } else if (interestRate === 0.05) {
-      let loanPrice =
-        (Number(price) - Number(price * interestRate)) / Number(12);
+      const loanPrice = price
+        ? (Number(price) - Number(price * interestRate)) / Number(12)
+        : 0;
       localStorage.setItem("total", loanPrice.toFixed(2));
     }
     localStorage.removeItem("Cart");
@@ -163,9 +170,7 @@ function BascketCart() {
                   <span className="text-sm text-grayC">-5% interesr</span>
                 </div>
                 {interst ? (
-                  <div className="flex justify-center items-center flex-col gap-4 mt-4">
-                    <span>${Number(price) - Number(price * interestRate)}</span>
-                  </div>
+                  <div className="flex justify-center items-center flex-col gap-4 mt-4"></div>
                 ) : (
                   " "
                 )}
